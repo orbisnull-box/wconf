@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "eca2ca751bbc8220ca85190c92460c5c",
+    "packages": [
+        {
+            "name": "orbisnull/dtpl",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orbisnull/dTpl.git",
+                "reference": "24d2da8788d853f82f0a2cb5807def8d6bb8f6c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orbisnull/dTpl/zipball/24d2da8788d853f82f0a2cb5807def8d6bb8f6c0",
+                "reference": "24d2da8788d853f82f0a2cb5807def8d6bb8f6c0",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "dTpl": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Vasiliy Shvakin",
+                    "email": "zen4dev@gmail.com"
+                }
+            ],
+            "description": "small base template engine",
+            "time": "2013-12-19 12:05:08"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "orbisnull/dtpl": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
