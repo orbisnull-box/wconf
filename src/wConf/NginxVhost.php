@@ -15,6 +15,7 @@ class NginxVhost
     protected $render;
     protected $configDir = '/etc/nginx/sites-available';
     protected $fcginame = 'php-www';
+    protected $publicDir = 'public';
 
     public function getRender()
     {
@@ -57,26 +58,45 @@ class NginxVhost
         return $this->fcginame;
     }
 
-    public function createConfig($servername, $enable = true, $fcginame = null)
+    /**
+     * @param string $publicDir
+     */
+    public function setPublicDir($publicDir)
+    {
+        $this->publicDir = $publicDir;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPublicDir()
+    {
+        return $this->publicDir;
+    }
+
+    public function createConfig($servername, $public = null, $enable = true, $fcginame = null)
     {
         $confDir = $this->getConfigDir();
         $fcginame = $fcginame ?: $this->getFcginame();
+        $public = $public ?: $this->getPublicDir();
         $render = $this->getRender();
-        $render->assignArray(['servername' => $servername, 'fcginame' => $fcginame]);
+        $render->assignArray(['servername' => $servername, 'fcginame' => $fcginame, 'public' => $public]);
         $template = 'nginx-vhost';
         $configText = $render->render($template);
         $file = $confDir . '/' . $servername;
         if (file_exists($file)) {
             throw new \RuntimeException("Config file for $servername exists");
         }
-        $result = file_put_contents($file, $configText, LOCK_EX);
+        $result = file_put_contents($file, $configText);
         if ($result === false) {
             throw new \RuntimeException("Error in write file: $file");
         }
         if ($enable) {
-            $symlink = realpath($confDir . '/../' . 'sites-enabled');
-            symlink($file, $symlink);
+            exec("ngxensite $servername");
+            exec("nginx -s reload");
         }
+        mkdir("/var/www/$servername/$public", 0755, true);
+        return $configText;
     }
 
 

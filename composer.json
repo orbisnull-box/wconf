@@ -9,6 +9,11 @@
         }
     ],
     "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "wConf": "src/"
+        }
+    },
     "require": {
         "orbisnull/dtpl": "dev-master"
     }

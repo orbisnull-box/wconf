@@ -1,5 +1,5 @@
 server {
-    root /var/www/<?=$servername?>/<?=$rootdir?>;
+    root /var/www/<?=$servername?>/<?=$public?>;
     index index.php index.html;
 
     server_name <?=$servername?> www.<?=$servername?>;
@@ -21,14 +21,14 @@ server {
 
     #
     location ~ \.php$ {
-    fastcgi_pass <?=$fcginame=?>;
-    include fastcgi_params;
+        fastcgi_pass <?=$fcginame?>;
+        include fastcgi_params;
     }
 
     location @php {
         fastcgi_pass   <?=$fcginame?>;
         include fastcgi_params;
-        fastcgi_param  SCRIPT_FILENAME  /var/www/<?=$servername?>/<?=$rootdir?>/index.php;
+        fastcgi_param  SCRIPT_FILENAME  /var/www/<?=$servername?>/<?=$public?>/index.php;
         fastcgi_param  SCRIPT_NAME      /index.php;
         fastcgi_param  QUERY_STRING     $uri&$args;
     }

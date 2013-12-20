@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "eca2ca751bbc8220ca85190c92460c5c",
+    "hash": "27d404817042b30f0feaf90e72ec2b10",
     "packages": [
         {
             "name": "orbisnull/dtpl",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orbisnull/dTpl.git",
-                "reference": "24d2da8788d853f82f0a2cb5807def8d6bb8f6c0"
+                "reference": "59296fb1bfb437fd854e57df227f509454e623fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orbisnull/dTpl/zipball/24d2da8788d853f82f0a2cb5807def8d6bb8f6c0",
-                "reference": "24d2da8788d853f82f0a2cb5807def8d6bb8f6c0",
+                "url": "https://api.github.com/repos/orbisnull/dTpl/zipball/59296fb1bfb437fd854e57df227f509454e623fc",
+                "reference": "59296fb1bfb437fd854e57df227f509454e623fc",
                 "shasum": ""
             },
             "type": "library",
@@ -31,12 +31,12 @@
             ],
             "authors": [
                 {
-                    "name": "Vasiliy Shvakin",
+                    "name": "orbisnull",
                     "email": "zen4dev@gmail.com"
                 }
             ],
             "description": "small base template engine",
-            "time": "2013-12-19 12:05:08"
+            "time": "2013-12-20 08:46:50"
         }
     ],
     "packages-dev": [
